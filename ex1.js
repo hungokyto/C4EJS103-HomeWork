@@ -26,9 +26,9 @@ function Ex6() {
 
 function Ex7() {
 
-    let a = document.getElementById("canha").value;
-    let aa = a.valueOf();
-    console.log(typeof aa);
+    let a = parseInt(document.getElementById("canha").value);
+    
+    console.log(typeof a);
     let b = document.getElementById("canhb").value;
 
     let c = document.getElementById("canhc").value;
