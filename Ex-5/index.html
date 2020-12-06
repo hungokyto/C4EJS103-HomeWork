@@ -32,6 +32,8 @@
             <option>4</option>
         </select>
         <input type="button" onclick="removeDrop()" value="Select and Remove">
+        <input type="text" id='textField'>
+        <input type="button" onclick="addItems()" value="Add Items">
     </div>
 
 
@@ -59,6 +61,15 @@
             var x = document.getElementById("Select");
             x.remove(x.selectedIndex);
         }
+        // Ex6.1
+        const addItems = () =>{
+           let colorSelect = document.getElementById("Select");
+           let text = document.getElementById("textField");
+           let option = document.createElement('option');
+           option.text = text.value;
+           let tempt = colorSelect.options[colorSelect.length];
+           colorSelect.add(option,tempt);
+       } 
 
         // Ex7
 

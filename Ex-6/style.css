@@ -1,0 +1,48 @@
+body {
+  background-color: rgba(166, 247, 250, 0.678);
+  text-align: center;
+  font-family: "Lobster", cursive;
+}
+.container {
+  margin-top: 100px;
+  color: white;
+  background-color: rgb(71, 205, 238);
+  width: 300px;
+  display: block;
+  justify-content: center;
+  margin: auto;
+  border-radius: 10px;
+}
+.weather-container {
+  background-color: #93f7f4;
+  color: #ffffff;
+
+  padding-bottom: 19px;
+}
+
+.getData {
+  padding-top: 20px;
+}
+.getData button {
+  background-color: orange;
+  color: aliceblue;
+  border-radius: 10px;
+  border: 0ch;
+  font-family: "Lobster", cursive;
+}
+.getData input {
+  font-family: "Lobster", cursive;
+  padding-left: 10px;
+
+  border-radius: 15px;
+  border: 0ch;
+  margin-bottom: 40px;
+  background-color: rgb(247, 247, 247);
+}
+.getData input::placeholder {
+  opacity: 30%;
+}
+.app-title {
+  padding-top: 1px;
+  font-size: 30px;
+}
