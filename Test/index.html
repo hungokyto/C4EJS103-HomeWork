@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+      #luckyNumber {
+        background-color: #00d9ff52;
+        padding: 40px 0px;
+        width: 468px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+      #luckyNumber div {
+        padding: 10px 0px;
+      }
+      button {
+        background-color: #ff6500;
+        color: #fff;
+        display: inline;
+        padding: 7px 15px;
+        border-radius: 15px;
+        margin: 0 3px;
+      }
+    </style>
+    <div class="container">
+      <div id="luckyNumber">
+        <div style="background-color: #0700ff; color: white">
+          <p style="font-size: 20px">LuckyNumber</p>
+        </div>
+        <div>
+          <p>Dự đoán con số của bạn nằm trong khoảng từ 1 đến 10</p>
+
+          <button onclick="luckyNumber()">Quay số</button>
+        </div>
+        <div id="result" style="font-size: 20px; color: red"></div>
+
+        <input id="number" placeholder="Nhập số mà bạn dự đoán" />
+        <button onclick="checkNumber()">Kiểm tra</button>
+      </div>
+    </div>
+
+    <script>
+      // Ex1
+      findOppositeNumber = (n, inputNumber) => {
+        let kq = 0;
+        if (inputNumber >= n / 2) {
+          kq = inputNumber - n / 2;
+          console.log(kq);
+        } else {
+          kq = inputNumber + n / 2;
+          console.log(kq);
+        }
+      };
+      findOppositeNumber(10, 2);
+      //Ex2
+      merge2String = (srt, num) => {
+        let kq = "";
+        let a = srt.split("");
+        let b = num.split("");
+        console.log(a);
+        console.log(b);
+        for (let i = 0; i < a.length || i < b.length; i++) {
+          if (i < a.length) {
+            kq += a[i];
+          }
+
+          if (i < b.length) {
+            kq += b[i];
+          }
+        }
+        console.log(kq);
+      };
+
+      merge2String("abcd", "1234");
+      //   Ex3
+      luckyNumber = (randomNumber) => {
+        let random = Math.floor(Math.random() * 10) + 1;
+        localStorage.setItem("luckynumber", random);
+        localStorage.setItem("clickcount", 3);
+      };
+
+      checkNumber = () => {
+        let n = parseInt(document.getElementById("number").value);
+
+        if (n > 0 && n <= 10) {
+          let dem = Number(localStorage.clickcount) - 1;
+          localStorage.setItem("clickcount", dem);
+          if (dem > 0) {
+            if (n === Number(localStorage.luckynumber)) {
+              alert("Bạn đã đoán đúng con số may mắn!");
+              location.reload();
+            } else {
+              alert("Chúc bạn may mắn lần sau! Bạn còn " + dem + " lượt chơi!");
+            }
+          } else {
+            alert("Bạn đã hết lượt chơi!");
+            location.reload();
+          }
+        } else {
+          alert("Bạn đã nhập sai!");
+        }
+        document.getElementById("number").value = "";
+      };
+    </script>
+  </body>
+</html>
